@@ -1,13 +1,14 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Midterm</title>
 	<link rel="stylesheet" href="portpage1.css" />
+</head>
+<body>
 
-	</head>
-
+	<div class="navbg">
 	<nav>
 
 		<ul>
@@ -18,18 +19,27 @@
 			<li><a href = #contact>Contact</a></li>
 		</ul>
 
-		<svg height="310" width="1100" class= lineone>
-  		<line x1="0" y1="0" x2="1080" y2="00" style="stroke:#000000;stroke-width:1" />
-
-  		<svg height="4000" width="1100" class= linetwo>
-  		<line x1="1080" y1="0" x2="1080" y2="1980" style="stroke:#000000;stroke-width:1" />
- 
+<!-- 		<div class="line-design" style="width: 76vw;">
+			<svg height="460" width="1190" class= lineone style="width:100%">
+		  		<line x1="0" y1="0" x2="1080" y2="00" style="stroke:#000000;stroke-width:1" />
+				<line x1="1080" y1="0" x2="1080" y2="2980" style="stroke:#000000;stroke-width:1" />
+			</svg>
+		</div> -->
+		 
 	</nav>
+</div>
 
-	<body>
 			
 		<div id="aboutme">
-			
+
+			<!-- <div class="line-design" style="width: 76vw;">
+				<svg height="460" width="1190" class= lineone style="width:100%">
+			  		<line x1="0" y1="0" x2="1080" y2="00" style="stroke:#000000;stroke-width:1" />
+					<line x1="1080" y1="0" x2="1080" y2="2980" style="stroke:#000000;stroke-width:1" />
+				</svg>
+			</div>
+ -->
+
 			<h1 class="aboutmetitle">About Me</h1>
 
 			<p class="aboutmetext"><img src="https://images.squarespace-cdn.com/content/v1/5728eaa4d51cd4da4692e289/1580236586111-0PSMI3H4E9LBF77QPCKQ/head-shot-portraits-norfolk-va-the-hague-melissa-bliss-photography.jpg" alt="portrait" width="40%" class="portrait">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat<img src="https://res.cloudinary.com/dggnjafo3/image/upload/v1634181016/few%20midterm/Asset_1_2x_srnvze.png" alt="awards" class="awardsimg" width="53%"></p>
@@ -62,7 +72,9 @@
 					<li class="portitem">Web Design</li>
 				</ul>
 
-				<a href="portfoliopage.html"><img src="https://res.cloudinary.com/dggnjafo3/image/upload/v1634249280/few%20midterm/%E4%B9%A6final_amz6ip.jpg" alt="potfolio" class="portimg"></a>
+				<div class="hoverzoom">
+				<a href="portfoliopage.html"><img src="https://res.cloudinary.com/dggnjafo3/image/upload/v1634249280/few%20midterm/%E4%B9%A6final_amz6ip.jpg" alt="potfolio" class="portimg" width="85%"></a>
+			</div>
 
 			</div>
 		</div>
@@ -164,11 +176,25 @@
 				<h1 class="contacttitle">Let’s Get in Touch</h1>
 
 				<div class="contactcard">
-					<p class="cardtext">Name<br>
-					   Email<br>
-					   <br>
-					   <br>
-					   Project Description</p>
+
+					<div class="typesection">
+					<p class="cardtext">Name  :</p>
+					<input class="input" type="text" name="Name" required>
+					</div>
+
+					<div class="typesection">
+					<p class="cardtext">Email  :</p>
+					<input class="input" type="text" name="Name" required>
+					</div>
+
+					<div class="typesection2">
+					<p class="cardtext">Project Description  :</p>
+					<input class="input2" type="text" name="Name" required>
+					</div>
+
+					<div class="wrapermain">
+						<p class="submit"><a href="midterm portfolio.html" class="submitbutton">submit</a></p>
+					</div>
 
 					 <p class="info">(778) 999-7598<br>
 									 angeloonitic@gmail.com</p>
