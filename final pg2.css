@@ -1,0 +1,119 @@
+	
+	.wrapper{
+  transform: translate(-50%, -50%);
+}
+
+	.back{font-family: Helvetica, sans-serif;
+		  font-weight: lighter;
+		  font-size: 20px;
+		  margin-left: 17px;
+		  margin-top: 30px;
+		  opacity: 60%}
+
+	body a {text-decoration: none;
+	        color: #000000;
+			transition: all .25s;}
+
+	.back{cursor: pointer;
+  font-size:20px;
+  line-height: 45px;
+  max-width: 160px; 
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%; }
+
+	.back {
+    letter-spacing: 0;
+	}
+
+	.back:hover,
+	.back:active {
+	  letter-spacing: 5px;
+	}
+
+	.back:after,
+	.back:before {
+	  backface-visibility: hidden;
+	  border: 1px solid rgba(#fff, 0);
+	  bottom: 0px;
+	  content: " ";
+	  display: block;
+	  margin: 0 auto;
+	  position: relative;
+	  transition: all 280ms ease-in-out;
+	  width: 0;
+	}
+
+	.back:hover:after,
+	.back:hover:before {
+	  backface-visibility: hidden;
+	  border-color: #fff;
+	  transition: width 350ms ease-in-out;
+	  width: 70%;
+	}
+
+	.back:hover:before {
+	  bottom: auto;
+	  top: 0;
+	  width: 70%;
+	}
+
+	.image{margin-left: 4%;
+		   margin-top: 2%;}
+	.img{padding-left: 2%;}
+
+	.introall{display: flex;
+			  margin-left: 6%;
+			  margin-top: 6%;}
+
+	.introtitle{font-family: Helvetica, sans-serif;
+				font-weight: lighter;
+				font-size: 15px;
+				opacity: 60%;
+			    padding-left: 200px;}
+
+	.intro{font-family: Helvetica, sans-serif;
+		   font-weight: lighter;
+		   font-size: 30px;
+		   padding-left: 20px;
+		   margin-top: 0px;}
+
+	.description{font-family: Helvetica, sans-serif;
+		   		 font-weight: lighter;
+		   		 font-size: 13px;
+		   		 width: 50%;
+		   		 line-height: 20px;
+		   		 text-align: center;}
+
+	.despart{display: flex;
+	         margin-left: 20%;
+	         margin-top: 5%}
+
+	.svgcircle{padding-left: 100px;
+			   padding-top: 15px;}
+
+	.descriptiontwo{font-family: Helvetica, sans-serif;
+		   		 font-weight: lighter;
+		   		 font-size: 13px;
+		   		 width: 40%;
+		   		 line-height: 20px;
+		   		 text-align: center;
+		   		 padding-left: 70px;}
+
+	.desparttwo{display: flex;
+	            margin-left: 23%;
+	            margin-top: 8%}
+
+	.svgcircletwo{padding-right: 100px;
+			      padding-top: 15px;}
+
+	.other{font-family: Helvetica, sans-serif;
+		   font-weight: lighter;
+		   text-align: center;
+		   margin-top: 13%;}
+
+	.otherimg{padding-left: 30px;}
+
+	.otherall{margin-left: 13.5%;
+			  margin-top: 5%;
+			  margin-bottom: 5%;}
