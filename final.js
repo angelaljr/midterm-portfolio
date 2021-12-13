@@ -1,27 +1,26 @@
 
-//change home page
-//add api
-//add line svg
+
+//scroll position
+$(document).ready(function(){
+  $(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    var doc = $(document).height();
+    var win = $(window).height();
+
+    var value = (scroll/(doc-win)) * 80;
+    $('ul .line').css('height', value + ('%'));
+  });
+});
 
 
 
-
-
-
-/ /$(document).ready(function() {
-// $('.skill-box').waypoint(function(direction) {
-// $('.skill-box').css({
-// animation: "animate-positive 2s",
-// opacity: "1"
-// });
-// }, { offset: '75%' });
-
-$(document).ready(function () {
+//skill circle
+function skill() {
   $('.skill-box').find('b').each(function (i) {
     return $(this).prop('Counter', 0).animate({
       Counter: $(this).parent().data('percent')
     }, {
-      duration: 1000,
+      duration: 2000,
       easing: 'swing',
       step(now) {
         return $(this).text(Math.ceil(now) + '%');
@@ -74,24 +73,34 @@ $(document).ready(function () {
       });
     }
   });
-});
+};
+
+
 
 //delay animation api
-let options = {
-  root: document.querySelector('.skill-box'),//viewport
+const section = document.querySelector('.skill-box');
+
+const options = {
+  root: null,//viewport
   rootMargin: '0px',
-  threshold: 0.25
+  threshold: 1.0,
 }
 
-let observer = new IntersectionObserver(function(entries, observer){
+const observer = new IntersectionObserver(function(entries, observer){
   entries.forEach(entry =>{
-
+    // console.log(entry);
+  if(entry.isIntersecting == true) {
+    skill();
+  }
   })
 }, options);
 
+observer.observe(section)
+
+
+
 
 //reviews
-
 const reviews = [
   {
     id: 1,
@@ -188,28 +197,28 @@ randomBtn.addEventListener("click", function () {
 
 
 //change image
-var imgE = new Array(NumberOfImages);
+var imgE = new Array(0);
 imgE[0] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639128616/few%20midterm/Screen_Shot_2021-12-10_at_4.30.13_AM_pmwwuz.png";
 
-var imgD = new Array(NumberOfImages);
-imgD[0] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639127062/few%20midterm/Screen_Shot_2021-12-10_at_4.04.19_AM_zm54ft.png";
+var imgD = new Array(4);
+imgD[0] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639128423/few%20midterm/jeico-01_m2wotj.jpg";
 imgD[1] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639127034/few%20midterm/Screen_Shot_2021-12-10_at_4.03.51_AM_ovqjqs.png";
-imgD[2] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639127005/few%20midterm/Screen_Shot_2021-12-10_at_4.03.21_AM_dsgx4d.png";
+imgD[2] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639127062/few%20midterm/Screen_Shot_2021-12-10_at_4.04.19_AM_zm54ft.png";
 imgD[3] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023955/few%20midterm/%E8%A1%A3%E6%9C%8D_front_c9t8ep.jpg";
-imgD[4] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639128423/few%20midterm/jeico-01_m2wotj.jpg";
+imgD[4] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023953/few%20midterm/Yazzi_logo_pdyfzu.jpg";
 
-var imgC = new Array(NumberOfImages);
-imgC[0] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023936/few%20midterm/bag_logo_h94ri7.jpg";
-imgC[1] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023935/few%20midterm/name_card_4_sdrxoe.jpg";
-imgC[2] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023935/few%20midterm/bag_logo_5_ho1dkv.jpg";
-imgC[3] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023935/few%20midterm/notepad_eusobr.jpg";
-imgC[4] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023935/few%20midterm/bag_logo_9_wk4wdj.jpg";
-imgC[5] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023935/few%20midterm/%E4%B9%A6final_swccv1.jpg";
-imgC[6] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023953/few%20midterm/Yazzi_logo_pdyfzu.jpg";
-imgC[7] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639126967/few%20midterm/Screen_Shot_2021-12-10_at_4.02.44_AM_wfliuw.png";
+var imgC = new Array(8);
+imgC[0] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023935/few%20midterm/%E4%B9%A6final_swccv1.jpg";
+imgC[1] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023936/few%20midterm/bag_logo_h94ri7.jpg";
+imgC[2] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023935/few%20midterm/name_card_4_sdrxoe.jpg";
+imgC[3] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023935/few%20midterm/bag_logo_5_ho1dkv.jpg";
+imgC[4] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023935/few%20midterm/notepad_eusobr.jpg";
+imgC[5] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023935/few%20midterm/bag_logo_9_wk4wdj.jpg";
+imgC[6] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639127005/few%20midterm/Screen_Shot_2021-12-10_at_4.03.21_AM_dsgx4d.png";
+imgC[7] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639127111/few%20midterm/Screen_Shot_2021-12-10_at_4.05.08_AM_rgc34m.png";
+imgC[8] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639126967/few%20midterm/Screen_Shot_2021-12-10_at_4.02.44_AM_wfliuw.png";
 
-
-var imgB = new Array(NumberOfImages);
+var imgB = new Array(6);
 imgB[0] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639126884/few%20midterm/Screen_Shot_2021-12-10_at_4.01.22_AM_ce555b.png"; 
 imgB[1] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639126871/few%20midterm/Screen_Shot_2021-12-10_at_4.01.09_AM_hcloqx.png"; 
 imgB[2] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639126903/few%20midterm/Screen_Shot_2021-12-10_at_4.01.41_AM_lcvlgu.png"; 
@@ -218,7 +227,7 @@ imgB[4] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639126838/few%20m
 imgB[5] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639126856/few%20midterm/Screen_Shot_2021-12-10_at_4.00.54_AM_gs6wfm.png";
 imgB[6] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639126930/few%20midterm/Screen_Shot_2021-12-10_at_4.02.07_AM_qqs2dq.png";
 
-var imgA = new Array(NumberOfImages); 
+var imgA = new Array(7); 
 imgA[0] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639041728/few%20midterm/Screen_Shot_2021-12-09_at_4.21.05_AM_d8kvby.png";
 imgA[1] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639041729/few%20midterm/Screen_Shot_2021-12-09_at_4.21.14_AM_nsumwn.png";
 imgA[3] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639041730/few%20midterm/Screen_Shot_2021-12-09_at_4.21.23_AM_irho2o.png";
@@ -228,16 +237,18 @@ imgA[5] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639126704/few%20m
 imgA[6] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023911/few%20midterm/decoration_yivja3.jpg";
 imgA[7] = "https://res.cloudinary.com/dggnjafo3/image/upload/v1639023912/few%20midterm/%E5%86%B0%E5%B1%B1_gzjgji.jpg";
 
-var NumberOfImages = 5 - 1;
+// var NumberOfImages = 8;
 var imgNumber = 0;
- let currentArray = imgA;
+let currentArray = imgC;
 
 // currentArray.style.overflow = "hidden"; 
 
 function NextImage() {
-  if (imgNumber < NumberOfImages) {
+  if (imgNumber < currentArray.length) {
     imgNumber++;
     document.images["SwitchingImage"].src = currentArray[imgNumber];
+  }else if (imgNumber == currentArray.length) {
+    document.images["SwitchingImage"].src = currentArray[0];
   }
 }
  
@@ -245,6 +256,8 @@ function PreviousImage() {
   if (imgNumber != 0) {
     imgNumber--;
     document.images["SwitchingImage"].src = currentArray[imgNumber];
+  }else if (imgNumber == 0) {
+    document.images["SwitchingImage"].src = currentArray[currentArray.length - 1];
   }
 }
 
@@ -252,18 +265,23 @@ function changeset() {
             if (clicked1 == true) {
                 document.images["SwitchingImage"].src = imgA[0];
                 currentArray = imgA;
+                clicked1 = false;
             }else if(clicked2 == true) {
                 document.images["SwitchingImage"].src = imgB[0];
                 currentArray = imgB;
+                clicked2 = false;
             }else if(clicked3 == true) {
                 document.images["SwitchingImage"].src = imgC[0];
                 currentArray = imgC;
+                clicked3 = false;
             }else if(clicked4 == true) {
                 document.images["SwitchingImage"].src = imgD[0];
                 currentArray = imgD;
+                clicked4 = false;
             }else if(clicked5 == true) {
                 document.images["SwitchingImage"].src = imgE[0];
                 currentArray = imgE;
+                clicked5 = false;
             }
         }
 
@@ -273,36 +291,36 @@ document.getElementById('1').addEventListener("click", function() {
    changeset();
 });
 
-// var clicked2 = false
-// document.getElementById('2').addEventListener("click", function() {
-//    clicked2 = true;
-//    changeset();
-// });
+var clicked2 = false
+document.getElementById('2').addEventListener("click", function() {
+   clicked2 = true;
+   changeset();
+});
 
-// var clicked3 = false
-// document.getElementById('3').addEventListener("click", function() {
-//    clicked3 = true;
-//    changeset();
-// });
+var clicked3 = false
+document.getElementById('3').addEventListener("click", function() {
+   clicked3 = true;
+   changeset();
+});
 
-// var clicked4 = false
-// document.getElementById('4').addEventListener("click", function() {
-//    clicked4 = true;
-//    changeset();
-// });
+var clicked4 = false
+document.getElementById('4').addEventListener("click", function() {
+   clicked4 = true;
+   changeset();
+});
 
-// var clicked5 = false
-// document.getElementById('5').addEventListener("click", function() {
-//    clicked5 = true;
-//    changeset();
-// });
+var clicked5 = false
+document.getElementById('5').addEventListener("click", function() {
+   clicked5 = true;
+   changeset();
+});
 
-//resize the images
-//click into the corresponding tab
+
+
+
 
 
 //submit
-
 function submitcheck(){
   var value = document.getElementsByClassName("mySeach").value;
   let spinner = document.getElementById("loader");
@@ -335,10 +353,57 @@ function removespinner() {
 }
 
 
-//loading circle 
-//sheet db
-//look better
 
 
+//sheetDB
+const app = {
 
+  apiUrl: 'https://sheetdb.io/api/v1/o8auwn4k8mgb1',
+
+  initialize: () => {
+    app.getTheData();
+    app.attachListeners();
+  },
+
+  attachListeners: () => {
+    $('#submit').click(e => {
+      app.addSomeone();
+    })
+  },
+
+  addSomeone: () => {
+    const data = {
+      name: $('.name').val(),
+      email: $('.email').val(),
+      description: $('.description').val(),
+    };
+
+    const requestBody = {data: [data]};
+
+    fetch(app.apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestBody)
+    })
+    .then(response => response.json())
+    .then(response => {
+      app.getTheData();
+    })
+  },
+
+  getTheData: function () {
+    fetch(app.apiUrl)
+    .then(response => response.json())
+    .then (response => {
+      response.forEach(entry => {
+        $('.container').append(
+          `<div class="entry">${entry.name} ${entry.email}, ${entry.description}</div>` 
+        )
+      })
+    });
+  }
+
+}
 
