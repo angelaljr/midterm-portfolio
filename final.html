@@ -305,25 +305,33 @@
 					
 					<button id="submit" onclick="submitcheck()">Submit</button>
 
-					<div id="loader">
-						<div></div><div></div><div></div><div></div>
-					</div>
+					<div id="loader"></div>
 
 					<div id="thank">thank you for signing up</div>
 
 
-
+					<div id="map"></div>
 
 
 
 					 <p class="info">(778) 999-7598<br>
 									 angeloonitic@gmail.com</p>
+
+					<script async     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV8_KONRkXAV__qyptcQEB7FVmSkjvo94&callback=initMap"></script>
+
 				</div>			
 			</div>
 		</div>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 		<script src="jquery.js" charset="UTF-8"></script>
 		<script src="final.js"></script>
+
 	</body>
+
+	  <script>
+    (function(){
+        app.initialize();
+      })();
+  </script>
 
 </html>

@@ -332,7 +332,8 @@ time, mark, audio, video {
         		  padding-left: 20px;}
 
         	.expdetail{width: 580px;
-        		   padding-top: 6px;}
+        		         padding-top: 6px;
+        		         /*color: transparent;*/}
 
         	.experiences{display: flex;
         		     margin-left: 15%;
@@ -433,14 +434,14 @@ time, mark, audio, video {
 		.input{width: 200px;
 		       height: 25px;
 		       margin-top: 25px;
-		       opacity: 70%;/*
+		       opacity: 10%;/*
 		       color: #ffffff;*/}
 
 		.input2{width: 260px;
 		        height: 200px;
 		        margin-left: 79px;
 		        margin-top: 5px;
-		        opacity: 70%;}
+		        opacity: 10%;}
 
 		#submit{text-align: left;
 		      	margin-left: 80px;
@@ -725,77 +726,21 @@ Reviews
   color: var(--clr-primary-1);
 }
 
-/*#loader {
-  border: 16px solid #f3f3f3; 
-  border-top: 16px solid #3498db; 
+
+#loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
   border-radius: 50%;
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;
-  
-}*/
-
-
-.loader {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
   visibility: hidden;
 }
 
-.loader div {
-  position: absolute;
-  top: 33px;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: #fff;
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
-.loader div:nth-child(1) {
-  left: 8px;
-  animation: lds-ellipsis1 0.6s infinite;
-}
-.loader div:nth-child(2) {
-  left: 8px;
-  animation: lds-ellipsis2 0.6s infinite;
-}
-.loader div:nth-child(3) {
-  left: 32px;
-  animation: lds-ellipsis2 0.6s infinite;
-}
-.loader div:nth-child(4) {
-  left: 56px;
-  animation: lds-ellipsis3 0.6s infinite;
-}
-@keyframes lds-ellipsis1 {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes lds-ellipsis3 {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-@keyframes lds-ellipsis2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(24px, 0);
-  }
-}
-
-
-
 
 #thank{
 	visibility: hidden;

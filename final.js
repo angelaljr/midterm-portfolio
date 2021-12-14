@@ -139,7 +139,7 @@ const reviews = [
       "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper. ",
   },
 ];
-// select items
+
 const img = document.getElementById("person-img");
 const author = document.getElementById("author");
 const job = document.getElementById("job");
@@ -149,10 +149,8 @@ const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
 const randomBtn = document.querySelector(".random-btn");
 
-// set starting item
 let currentItem = 0;
 
-// load initial item
 window.addEventListener("DOMContentLoaded", function () {
   const item = reviews[currentItem];
   img.src = item.img;
@@ -161,7 +159,6 @@ window.addEventListener("DOMContentLoaded", function () {
   info.textContent = item.text;
 });
 
-// show person based on item
 function showPerson(person) {
   const item = reviews[person];
   img.src = item.img;
@@ -169,7 +166,7 @@ function showPerson(person) {
   job.textContent = item.job;
   info.textContent = item.text;
 }
-// show next person
+
 nextBtn.addEventListener("click", function () {
   currentItem++;
   if (currentItem > reviews.length - 1) {
@@ -177,7 +174,7 @@ nextBtn.addEventListener("click", function () {
   }
   showPerson(currentItem);
 });
-// show prev person
+
 prevBtn.addEventListener("click", function () {
   currentItem--;
   if (currentItem < 0) {
@@ -185,13 +182,14 @@ prevBtn.addEventListener("click", function () {
   }
   showPerson(currentItem);
 });
-// show random person
+
 randomBtn.addEventListener("click", function () {
   console.log("hello");
 
   currentItem = Math.floor(Math.random() * reviews.length);
   showPerson(currentItem);
 });
+
 
 
 
@@ -325,21 +323,30 @@ function submitcheck(){
   var value = document.getElementsByClassName("mySeach").value;
   let spinner = document.getElementById("loader");
   let thank = document.getElementById("thank");
-  const email = document.getElementById("email");
+  const email = document.getElementById("email").value;
   const submit = document.getElementById("submit");
+  let name = document.getElementById("name").value;
+  let description = document.getElementById("description").value;
 
-  if(value !== '' && checkemail(document.getElementById("email").value) === true){
+// alert(name);
+// alert(description);
+// alert(checkemail(email));
+  if(name !== '' && description !== '' && checkemail(email)){
     submit.style.display="none";
-        spinner.style.visibility = "visible";
-        setTimeout(removespinner, 2000);  
-  }else if(value === ''){
-    alert("Please fill in the blanks");
-  }else if(checkemail(document.getElementById("email").value) !== true){
+    spinner.style.visibility = "visible";
+    setTimeout(removespinner, 2000);  
+  }else if(name === ''){
+    alert("Please enter your name.");
+  }else if(email === '' || checkemail(email)){
     alert("invalid email address");
   }else{
-    alert("the form is empty");
+    alert("Please enter your description.");
   }
 }
+
+//checkemail(document.getElementById("email").value) !== true
+
+
 
 function checkemail(email){
   const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -406,4 +413,21 @@ const app = {
   }
 
 }
+
+
+
+
+
+//google maps api
+function initMap(){
+  var options = {
+    center:{lat: -123.12073 , lng: 49.2827291},
+    zoom: 8 ,
+  }
+
+  map = new google.maps.Map(document.getElementById("map"), options)
+}
+
+
+
 
